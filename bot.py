@@ -29,10 +29,9 @@ while len(feed) != 0:
                 if(json_res['solid']):
                     code = post['code']
                     print('Solid image found. Informing user on post %s' % code)
-                    client.post_comment(post['id'], 'Hi, please dont use the blacklivesmatter tag as it is currently blocking important info from being shared. Please delete and repost with #BlackoutTuesday instead (Editing the caption wont work). If you want other ways to help please check out our bio. Thank you :)')
+                    client.post_comment(post['id'], u'Hi, please don’t use the blacklivesmatter tag as it is currently blocking important info from being shared. Please delete and repost with #BlackoutTuesday instead (Editing the caption wont work). If you want other ways to help please check out our bio. Thank you :)')
             except:
                 print('Ran into an exception (IG may be rate limiting)');
                 continue
         if len(feed) == 1:
             feed = client.feed_tag('blacklivesmatter', client.generate_uuid())
-                    
