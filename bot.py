@@ -12,6 +12,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 from ratelimiter import RateLimiter
 
 rate_limiter = RateLimiter(max_calls=1, period=5.0);
+
 clients = []
 feed = []
 contains_comment = False
@@ -83,9 +84,8 @@ while len(feed) != 0:
                     if 'spam": true,' in e.error_response:
                         print(color("Error : Commented too many times. \n", colors.RED))
                     else:
-                        print(color(e +'\n', colors.RED))
+                        print(color(repr(e) +'\n', colors.RED))
                     continue
 
             if len(feed) == 1:
                 feed = client.feed_tag('blacklivesmatter', client.generate_uuid())
-                    
