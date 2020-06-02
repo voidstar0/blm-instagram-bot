@@ -10,3 +10,5 @@ Uses a Google Cloud Function called [blm-cloud-function](https://github.com/char
 2. Keep a cache of posts the bot has already commented on.
 3. Use multiple accounts to rotate and avoid being rate limited by Instagram.
 4. Use a better way to detect solid images (Currently just checks if all RGB values are under 20)
+
+Make sure to rename .env.example to .env
