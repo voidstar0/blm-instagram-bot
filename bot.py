@@ -1,17 +1,17 @@
+from ratelimiter import RateLimiter
 from instagram_private_api import Client, ClientCompatPatch
 from dotenv import load_dotenv, find_dotenv
 import json
 import requests
 import os
 from time import sleep
-from random import randint
+from random import randint, choice
 from ColorIt import *
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
-from ratelimiter import RateLimiter
 
-rate_limiter = RateLimiter(max_calls=1, period=5.0);
+rate_limiter = RateLimiter(max_calls=1, period=5.0)
 
 clients = []
 feed = []
@@ -25,9 +25,10 @@ comments = [
 
 
 load_dotenv(find_dotenv())
-initColorIt()
+init_color_it()
 
-#login to instagram
+
+# login to instagram
 with open('./accounts.json') as f:
     data = json.load(f)
     for acc in data:
@@ -36,28 +37,28 @@ with open('./accounts.json') as f:
         clients.append(client)
         feed = client.feed_tag('blacklivesmatter', client.generate_uuid())
 
-#Goes over the pictures in the black lives matter hashtag
+# Goes over the pictures in the black lives matter hashtag
 while len(feed) != 0:
     for client in clients:
         with rate_limiter:
-            print ('Looking for an image... \n')
-            post = feed['items'].pop(0)        
-            print ('Found ' + str(feed['num_results']) + ' images. \n')
+            print('Looking for an image... \n')
+            post = feed['items'].pop(0)
+            print('Found ' + str(feed['num_results']) + ' images. \n')
 
-            waitTime = randint(10,30)
-            print(color('Waiting ' + str(waitTime) + ' sec. \n',colors.YELLOW))
-            sleep(waitTime)
+            wait_time = randint(10, 30)
+            print(color('Waiting ' + str(wait_time) + ' sec. \n', colors.YELLOW))
+            sleep(wait_time)
 
-            print ('Analyzing post '+ post['code'] +' ...\n')
+            print('Analyzing post ' + post['code'] + ' ...\n')
 
             if 'image_versions2' in post:
                 try:
                     url = post['image_versions2']['candidates'][0]['url']
-                    res = requests.post(os.getenv("CLOUD_FUNCTION_URL"), data = { 'img_url': url })
+                    res = requests.post(os.getenv("CLOUD_FUNCTION_URL"), data={'img_url': url})
                     json_res = res.json()
 
                     # check if the image is a black square
-                    if(json_res['solid']):
+                    if json_res['solid']:
                         code = post['code']
                         if 'comment_count' in post and post['comment_count'] > 0:
                             for comment in post['preview_comments']:
@@ -65,26 +66,24 @@ while len(feed) != 0:
                                     contains_comment = True
                                     break
                             if not contains_comment:
-                                print(color('Solid image found. Informing user on post %s' % code + '\n',colors.ORANGE))
-                                randomlySelectedComment = randint(0,3)
-                                client.post_comment(post['id'], str(comments[randomlySelectedComment]))
-                                print(color('commented successfully. \n',colors.GREEN))
+                                print(color('Solid image found. Informing user on post %s' % code + '\n', colors.ORANGE))
+                                client.post_comment(post['id'], choice(comments))
+                                print(color('commented successfully. \n', colors.GREEN))
                             else:
                                 print('Bot has already commented on post: %s' % code)
                             contains_comment = False
                         else:
-                                print(color('Solid image found. Informing user on post %s' % code + '\n',colors.ORANGE))
-                                randomlySelectedComment = randint(0,3)
-                                client.post_comment(post['id'], str(comments[randomlySelectedComment]))
-                                print(color('commented successfully. \n',colors.GREEN))
-                    else: 
+                            print(color('Solid image found. Informing user on post %s' % code + '\n', colors.ORANGE))
+                            client.post_comment(post['id'], choice(comments))
+                            print(color('commented successfully. \n', colors.GREEN))
+                    else:
                         print('Image isn''t a black square.. moving on the next..')
 
                 except Exception as e:
-                    if 'spam": true,' in e.error_response:
+                    if hasattr(e, 'error_response') and 'spam": true,' in e.error_response:
                         print(color("Error : Commented too many times. \n", colors.RED))
                     else:
-                        print(color(repr(e) +'\n', colors.RED))
+                        print(color(repr(e) + '\n', colors.RED))
                     continue
 
             if len(feed) == 1:
