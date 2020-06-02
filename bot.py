@@ -12,14 +12,12 @@ load_dotenv(find_dotenv())
 
 clients = []
 feed = []
-usernames = []
 
 contains_comment = False
 
 with open('./accounts.json') as f:
     data = json.load(f)
     for acc in data:
-        usernames.append(acc['username'])
         print('Logging in with username %s' % acc['username'])
         client = Client(acc['username'], acc['password'])
         clients.append(client)
