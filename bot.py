@@ -6,7 +6,7 @@ import requests
 import os
 from time import sleep
 from random import randint, choice
-from ColorIt import *
+from color_it import *
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
