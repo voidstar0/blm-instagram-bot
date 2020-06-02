@@ -15,9 +15,6 @@ rate_limiter = RateLimiter(max_calls=200, period=60.0);
 
 with open('./accounts.json') as f:
     data = json.load(f)
-    num_accounts = len(data)
-    # https://developers.facebook.com/docs/graph-api/overview/rate-limiting#instagram
-    ops_per_minute = 200 * num_accounts
     for acc in data:
         print('Logging in with username %s' % acc['username'])
         client = Client(acc['username'], acc['password'])
