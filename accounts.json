@@ -1,9 +1,8 @@
 [{
-        "username": "USERNAME_1",
-        "password": "PASSWORD_1"
-    },
-    {
-        "username": "USERNAME_2",
-        "password": "PASSWORD_2"
-    }
-]
+    "username": "PLEASE_USE_BURNER_ACCOUNT_1",
+    "password": "PASSWORD_1"
+},
+{
+    "username": "PLEASE_USE_BURNER_ACCOUNT_2",
+    "password": "PASSWORD_2"
+}]
