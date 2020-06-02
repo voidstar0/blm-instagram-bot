@@ -13,7 +13,7 @@ load_dotenv(find_dotenv())
 
 test = False
 
-rate_limiter = RateLimiter(max_calls=200, period=60.0);
+rate_limiter = RateLimiter(max_calls=1, period=5.0);
 
 clients = []
 feed = []
