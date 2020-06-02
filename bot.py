@@ -14,6 +14,7 @@ load_dotenv(find_dotenv())
 test = False
 
 rate_limiter = RateLimiter(max_calls=200, period=60.0);
+
 clients = []
 feed = []
 contains_comment = False
