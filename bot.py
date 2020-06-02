@@ -11,8 +11,7 @@ load_dotenv(find_dotenv())
 
 clients = [];
 feed = [];
-num_accounts = 0;
-ops_per_minute = 0;
+rate_limiter = RateLimiter(max_calls=200, period=60.0);
 
 with open('./accounts.json') as f:
     data = json.load(f)
@@ -24,8 +23,6 @@ with open('./accounts.json') as f:
         client = Client(acc['username'], acc['password'])
         clients.append(client)
         feed = client.feed_tag('blacklivesmatter', client.generate_uuid())
-
-rate_limiter = RateLimiter(max_calls=ops_per_minute, period=60.0)
 
 while len(feed) != 0:
     for client in clients:
