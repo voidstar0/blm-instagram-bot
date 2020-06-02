@@ -17,10 +17,20 @@ clients = []
 feed = []
 contains_comment = False
 comments = [
-    'Hi, please dont use the blacklivesmatter tag as it is currently blocking important info from being shared. Please delete and repost with #BlackoutTuesday instead (Editing the caption wont work). If you want other ways to help please check out our bio. Thank you :)',
-    'Please use the #blackouttuesday instead of blacklivesmatter if you''re posting a black square.  Please delete and repost with #BlackoutTuesday instead (Editing the caption wont work). If you want other ways to help please check out our bio. Thank you :)',
-    'It appears you have posted a black square in the wrong hashtag blacklivesmatter is used to spread critical information. Please delete and repost with #BlackoutTuesday instead (Editing the caption wont work). If you want other ways to help please check out our bio. Thank you :)',
-    'Posting black screens is hiding critical information please delete your image and repost it with the #BlackoutTuesday instead. If you want other ways to help please check out our bio. Thank you :)'
+    'Hi, please dont use the blacklivesmatter tag as it is currently blocking important info from being shared. '
+    'Please delete and repost with #BlackoutTuesday instead (Editing the caption wont work). '
+    'If you want other ways to help please check out our bio. Thank you :)',
+
+    'Please use the #blackouttuesday instead of blacklivesmatter if you' 're posting a black square. '
+    'Please delete and repost with #BlackoutTuesday instead (Editing the caption wont work). '
+    'If you want other ways to help please check out our bio. Thank you :)',
+
+    'It appears you have posted a black square in the wrong hashtag blacklivesmatter is used to spread critical information. '
+    'Please delete and repost with #BlackoutTuesday instead (Editing the caption wont work). '
+    'If you want other ways to help please check out our bio. Thank you :)',
+
+    'Posting black screens is hiding critical information please delete your image and repost it with the #BlackoutTuesday instead. '
+    'If you want other ways to help please check out our bio. Thank you :)'
 ]
 
 
