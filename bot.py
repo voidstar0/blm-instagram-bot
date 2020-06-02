@@ -11,6 +11,8 @@ from ratelimiter import RateLimiter
 
 load_dotenv(find_dotenv())
 
+test = False
+
 rate_limiter = RateLimiter(max_calls=200, period=60.0);
 clients = []
 feed = []
@@ -44,13 +46,16 @@ while len(feed) != 0:
                                     break
                             if not contains_comment:
                                 print('Solid image found. Informing user on post %s' % code)
-                                client.post_comment(post['id'], MESSAGE)
+                                if not test: client.post_comment(post['id'], MESSAGE)
                             else:
                                 print('Bot has already commented on post: %s' % code)
                             contains_comment = False
                         else:
                             print('Solid image found. Informing user on post %s' % code)
-                            client.post_comment(post['id'], MESSAGE)
+                            if not test: client.post_comment(post['id'], MESSAGE)
+                except KeyboardInterrupt:
+                    print("Breaking loop")
+                    break
                 except:
                     print('Ran into an exception (IG may be rate limiting)')
                     continue
