@@ -37,8 +37,12 @@ while len(feed) != 0:
                     json_res = res.json()
                     if(json_res['solid']):
                         code = post['code']
+                        if 'comments_disabled' in post:
+                            print('Bot cannot comment on post due to disabled comments: %s' % code)
+                            break
                         if 'comment_count' in post and post['comment_count'] > 0:
-                            for comment in post['preview_comments']:
+                            comments = client.media_comments(feed['id'])
+                            for comment in comments['comments']:
                                 if "please dont use the blacklivesmatter tag" in comment['text'].lower():
                                     contains_comment = True
                                     break

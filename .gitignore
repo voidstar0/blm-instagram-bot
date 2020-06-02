@@ -1,1 +1,5 @@
 .env
+accounts.json
+.gitignore
+test.*
+.vs/
