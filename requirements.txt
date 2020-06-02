@@ -1,0 +1,10 @@
+certifi==2020.4.5.1
+chardet==3.0.4
+idna==2.9
+instagram-private-api==1.6.0
+pypiwin32==223
+python-dotenv==0.13.0
+pywin32==227
+requests==2.23.0
+typing==3.7.4.1
+urllib3==1.25.9
