@@ -20,5 +20,5 @@ for post in results['items']:
         if(json_res['solid']):
             code = post['code']
             print('Solid image found. Informing user on post %s' % code)
-            api.post_comment(post['id'], 'Hi, please dont use the blacklivesmatter tag as it is currently blocking important info from being shared. Please delete and repost with #BlackoutTuesday instead. Thank you :)')
+            api.post_comment(post['id'], 'Hi, please dont use the blacklivesmatter tag as it is currently blocking important info from being shared. Please delete and repost with #BlackoutTuesday instead. If you want other ways to help check out please check out our bio. Thank you :)')
             
