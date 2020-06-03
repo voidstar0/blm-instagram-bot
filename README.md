@@ -12,7 +12,7 @@ You need Python 3 and `pip`.
 
 On Ubuntu: `sudo apt install python3-dev python3-pip` will get you there. You will use `python3` and `pip3` in place of `pip` and `python`, unless you override which the default is with your `$PATH` variable.
 
-1. Run `pip install -r requirements.txt`. If you are not on Windows, comment out the lines with `pywin32` and `pypiwin32`.
+1. Run `pip install -r requirements.txt`.
 1. Rename `.env.example` to `.env`
 1. Run `python3 bot.py`
 
