@@ -30,6 +30,21 @@ comments = [
     'If you want other ways to help please check out our bio. Thank you :)',
 
     'Posting black screens is hiding critical information please delete your image and repost it with the #BlackoutTuesday instead. '
+    'If you want other ways to help please check out our bio. Thank you :)',
+    #using uppercase I's instead of L's. except the last line
+    'Hi, please dont use the bIackIivesmatter tag as it is currently bIocking important info from being shared. '
+    'PIease deIete and repost with #BlackoutTuesday instead (Editing the caption wont work). '
+    'If you want other ways to help please check out our bio. Thank you :)',
+
+    'PIease use the #blackouttuesday instead of blackIivesmatter if you' 're posting a bIack square. '
+    'Please deIete and repost with #BlackoutTuesday instead (Editing the caption wont work). '
+    'If you want other ways to help please check out our bio. Thank you :)',
+
+    'It appears you have posted a bIack square in the wrong hashtag bIackIivesmatter. The hashtag is cluttered with black tiles and it is making it difficult for people to reach critical information.'
+    'PIease deIete and repost with #BlackoutTuesday instead (Editing the caption wont work). '
+    'If you want other ways to help please check out our bio. Thank you :)',
+
+    'Posting black screens is hiding critical information on the BlackLivesMatter tag, please deIete your image and repost it with the #BlackoutTuesday instead. IMPORTANT: Editing will not work'
     'If you want other ways to help please check out our bio. Thank you :)'
 ]
 
