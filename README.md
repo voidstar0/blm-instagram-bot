@@ -1,5 +1,6 @@
 # blm-instagram-bot
  Instagram bot that informs users using the BlackLivesMatter tag to post solid images that they may be accidentally hiding important information about the movement.
+ 
 ![Demonstration 1](https://i.imgur.com/cbW2vEY.png)
 ![Demonstration 2](https://i.imgur.com/nsYbHJl.png)
 
