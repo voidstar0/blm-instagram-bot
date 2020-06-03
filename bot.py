@@ -75,7 +75,7 @@ while len(feed) != 0:
                             continue
                         if 'comment_count' in post and post['comment_count'] > 0:
                             for comment in post['preview_comments']:
-                                if "If you want other ways to help please check out our bio. Thank you :)" in comment['text'].lower():
+                                if comment['text'] in comments:
                                     contains_comment = True
                                     continue
                             if not contains_comment:
