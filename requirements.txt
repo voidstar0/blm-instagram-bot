@@ -4,7 +4,7 @@ idna==2.9
 instagram-private-api==1.6.0
 pypiwin32==223;platform_system == "Windows"
 python-dotenv==0.13.0
-pywin32==227;platform_system == "Windows"
+pywin32==301;platform_system == "Windows"
 requests==2.23.0
 typing==3.7.4.1
 urllib3==1.26.5
