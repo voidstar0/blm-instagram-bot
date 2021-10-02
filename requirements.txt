@@ -7,5 +7,5 @@ python-dotenv==0.13.0
 pywin32==227;platform_system == "Windows"
 requests==2.23.0
 typing==3.7.4.1
-urllib3==1.25.9
+urllib3==1.26.5
 ratelimiter==1.2.0.post0
